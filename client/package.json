@@ -1,7 +1,7 @@
 {
-  "name": "mern",
+  "name": "speakup",
   "version": "0.1.0",
-  "description": "Mern Demo",
+  "description": "forum",
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
