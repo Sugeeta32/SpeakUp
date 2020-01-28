@@ -16,6 +16,7 @@ class Forum extends Component {
 
   render() {
     return( //HTML IN HERE!
+      <h1>Some Forum</h1>
     );
   }
 }
