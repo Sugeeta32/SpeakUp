@@ -1,10 +1,11 @@
 import React from "react";
-import "./style.scss";
+//import styled from 'styled-components';
+import "../styles/login.scss";
 
-import { Login, Register } from "../../components/login/index";
+import { Login, Register } from "../components/login";
 //import Nav from "./components/Nav";
 
-class App extends React.Component {
+class SignIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -73,4 +74,4 @@ const RightSide = props => {
     </div>
   );
 };
-export default Login;
+export default SignIn;

@@ -1,24 +1,14 @@
-import React from "react";
-import { Col, Row, Container } from "../components/Grid";
-import Jumbotron from "../components/Jumbotron";
-
-function NoMatch() {
-  return(  
-  <Container fluid>
-    <Row>
-      <Col size="md-12">
-        <Jumbotron>
-          <h1>404 Page Not Found</h1>
-          <h1>
-            <span role="img" aria-label="Face With Rolling Eyes Emoji">
-              🙄
-            </span>
-          </h1>
-        </Jumbotron>
-      </Col>
-    </Row>
-  </Container>//HTML in here!
-  );
-}
+import React from 'react';
+// import styled from 'styled-components';
+// const Wrapper = styled.div`
+//   margin-top: 1em;
+//   margin-left: 6em;
+//   margin-right: 6em;
+// `;
+export const NoMatch = () => (
+  <Wrapper>
+    <h2>No Match</h2>
+  </Wrapper>
+)
 
 export default NoMatch;
