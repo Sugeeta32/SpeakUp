@@ -26,7 +26,7 @@ export class Login extends React.Component {
           </div>
         </div>
         <div className="footer">
-          <button type="button" className="btn">
+          <button type="button" className="btn" style={{backgroundColor: "lightblue"}}>
             Login
           </button>
         </div>

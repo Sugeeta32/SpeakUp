@@ -11,7 +11,7 @@ function Home() {
             <Container>
                 <Row >
                   
-                        <Col md={6}>{`SpeakUp is a share your story site where you can share your story anonymously and unburden yourself. It only takes a minute to sign up.`}</Col>
+                        <Col md={6}>{`SpeakUp is a share your story site where you can share your story anonymously and unburden yourself. It only takes a minute to sign up.`}<button type = "button"className="btn">LogIn</button></Col>
                         <Col md={{ span: 4, offset: 0 }}>{`💬 Share your story, strengthen your resilience`}</Col>
                         </Row>
                         
