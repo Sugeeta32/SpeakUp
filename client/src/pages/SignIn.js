@@ -1,6 +1,6 @@
 import React from "react";
 //import styled from 'styled-components';
-import "../styles/login.scss";
+import "../styles/signin.scss";
 
 import { Login, Register } from "../components/login";
 //import Nav from "./components/Nav";
