@@ -2,28 +2,28 @@ import React, {Component} from "react";
 import API from "../utils/API";
 import {Link} from "react-router-dom";
 
-class Forums extends Component {
+class Topics extends Component {
   state = {
-    forums: [],
-    title: "",
-    description: "",
+    topics: [],
+    subject: "",
+    content: ""
   };
 
   componentDidMount() {
-    this.loadForums();
+    this.loadTopics();
   }
 
-  loadForums = () => {
-    API.getForums()
+  loadTopics = () => {
+    API.getTopics()
       .then(res =>
-        this.setState({forums: res.data, title: "", description: ""})
+        this.setState({topics: res.data, subject: "", content: ""})
       )
       .catch(err => console.log(err));
   };
 
-  deleteForum = id => {
-    API.deleteForum(id)
-      .then(res => this.loadForums())
+  deleteTopic = id => {
+    API.deleteTopic(id)
+      .then(res => this.loadTopics())
       .catch(err => console.log(err));
   };
 
@@ -36,21 +36,21 @@ class Forums extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.title && this.state.description) {
+    if (this.state.subject && this.state.content) {
       API.newForum({
-        title: this.state.title,
-        description: this.state.description
+        subject: this.state.subject,
+        content: this.state.content
       })
-        .then(res => this.loadForums())
+        .then(res => this.loadTopics())
         .catch(err => console.log(err));
     }
   };
 
   render() {
     return( //HTML IN HERE!
-      <h1>All Forums</h1>
+      <h1>All Topics</h1>
     );
   }
 }
 
-export default Forums;
+export default Topics;

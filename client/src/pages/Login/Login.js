@@ -1,8 +1,8 @@
 import React from "react";
-import "./App.scss";
-import { Login, Register } from "./components/login/index";
-//import Login from "./pages/Login";
- import Nav from "./components/Nav";
+import "./style.scss";
+
+import { Login, Register } from "../../components/login/index";
+//import Nav from "./components/Nav";
 
 class App extends React.Component {
   constructor(props) {
@@ -36,7 +36,7 @@ class App extends React.Component {
     const currentActive = isLogginActive ? "login" : "register";
     return (
     <div>
-      <Nav/>
+    
       <div className="App">
               <div className="login">
           <div className="container" ref={ref => (this.container = ref)}>
@@ -73,5 +73,4 @@ const RightSide = props => {
     </div>
   );
 };
-
-export default App;
+export default Login;

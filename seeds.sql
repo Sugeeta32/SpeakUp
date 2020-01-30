@@ -6,30 +6,31 @@ CREATE TABLE users (
   userID INTEGER NOT NULL AUTO_INCREMENT,
   name VARCHAR(30) NOT NULL,
   password VARCHAR(30) NOT NULL,
-  admin BOOLEAN NOT NULL,
+  email VARCHAR(50) NOT NULL,
   dateJoined DATETIME,
   postNumber INTEGER(10),
   PRIMARY KEY (userID)
 );
 
-CREATE TABLE forums (
-  forumID INTEGER NOT NULL AUTO_INCREMENT,
-  title VARCHAR(50) NOT NULL,
-  description TEXT,
+CREATE TABLE topics (
+  topicID INTEGER NOT NULL AUTO_INCREMENT,
+  subject VARCHAR(50) NOT NULL,
+  content TEXT,
   userID INTEGER NOT NULL,
-  dateCreated DATETIME,
-  PRIMARY KEY (forumID),
+  datePosted DATETIME,
+  PRIMARY KEY (topicID),
   FOREIGN KEY (userID) REFERENCES users(userID)
 );
 
-CREATE TABLE posts (
-  postID INTEGER NOT NULL AUTO_INCREMENT,
-  forumID INTEGER NOT NULL,
+CREATE TABLE replies (
+  replyID INTEGER NOT NULL AUTO_INCREMENT,
+  topicID INTEGER NOT NULL,
+  repliedID INTEGER,
   subject VARCHAR(100) NOT NULL,
   content MEDIUMTEXT,
   userID INTEGER NOT NULL,
   datePosted DATETIME,
   PRIMARY KEY (postID),
-  FOREIGN KEY (forumID) REFERENCES forums(forumID),
+  FOREIGN KEY (topicID) REFERENCES topics(topicID),
   FOREIGN KEY (userID) REFERENCES users(userID)
 )

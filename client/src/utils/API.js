@@ -1,20 +1,20 @@
 import axios from "axios";
 
 export default {
-  //Display all forums
+  //Display all topics
   getForums: function() {
-    return axios.get(`/api/forums`);
+    return axios.get(`/api/topics`);
   },
-  //Display all posts in a given forum
-  getForum: function(forum) {
-    return axios.get(`/api/forums/${forum}`);
+  //Display all posts in a given topic
+  getForum: function(topic) {
+    return axios.get(`/api/topics/${topic}`);
   },
-  //Deletes a forum (along with all its posts)
-  deleteForum: function(forum) {
-    return axios.delete(`/api/forums/${forum}`);
+  //Deletes a topic (along with all its posts)
+  deleteForum: function(topic) {
+    return axios.delete(`/api/topics/${topic}`);
   },
-  //Creates a new forum with an opening post
-  newForum: function(forumData) {
-    return axios.post("/api/forums", forumData);
+  //Creates a new topic with an opening question/issue
+  newForum: function(topicData) {
+    return axios.post("/api/topics", topicData);
   }
 };
