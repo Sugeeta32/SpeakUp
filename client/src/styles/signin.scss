@@ -85,6 +85,7 @@
       align-items: flex-end;
       &:hover {
         right: -45%;
+        background-color: #FF841E;
       }
     }
     &.left {
@@ -92,6 +93,7 @@
       align-items: flex-start;
       &:hover {
         right: 45%;
+        background-color: #FF841E;
       }
     }
 

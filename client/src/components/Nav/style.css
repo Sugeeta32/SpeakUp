@@ -1,8 +1,10 @@
 nav.navbar {
     margin-bottom: 0;
-    background-color: #bbbbbb;
+    background-color: #999;
   }
   .AppLogo{
-      height: 50px;
-      width:150px;
+    margin-top: -15px;
+    height: 80px;
+    width: 223px;
+    margin-bottom: -13px;
   }
