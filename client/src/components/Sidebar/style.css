@@ -3,12 +3,12 @@
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-resume/blob/master/LICENSE)
  */
-
+/* 
  body {
     font-family: 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     padding-top: 54px;
     color: #868e96;
-  }
+  } */
   /* #zero{
     color: green;
   } */
@@ -38,11 +38,11 @@
     color: #343a40;
   }
   
-  h1 {
+  /* h1 {
     font-size: 6rem;
     line-height: 5.5rem;
     text-shadow: 1px 2px 3px #de520f;
-  }
+  } */
   
   h2 {
     font-size: 3.5rem;
@@ -89,10 +89,10 @@
     font-size: 43px;
   }
   
-  .dev-icons .list-inline-item i:hover {
+  /* .dev-icons .list-inline-item i:hover {
     color: #BD5D38;
   }
-  
+   */
   #sideNav .navbar-nav .nav-item .nav-link {
     font-weight: 800;
     letter-spacing: 0.05rem;
@@ -170,9 +170,9 @@
     }
   }
   
-  .bg-primary {
+  /* .bg-primary {
     background-color: #999 !important;
-  }
+  } */
   
   .text-primary {
     color: #BD5D38 !important;
