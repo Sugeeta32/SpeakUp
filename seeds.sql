@@ -15,6 +15,7 @@ CREATE TABLE users (
 CREATE TABLE topics (
   topicID INTEGER NOT NULL AUTO_INCREMENT,
   subject VARCHAR(50) NOT NULL,
+  category VARCHAR(30) NOT NULL,
   content TEXT,
   userID INTEGER NOT NULL,
   datePosted DATETIME,
