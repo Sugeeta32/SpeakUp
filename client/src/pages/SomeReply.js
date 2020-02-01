@@ -6,23 +6,23 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Jumbotron from "../components/Jumbotron";
 
-class Topic extends Component {
+class Reply extends Component {
   state = {
-    topic: {}
+    reply: {}
   };
-  // Grabs all the content and replies from the topic with the _id of this.props.match.params.id
-  // e.g. localhost:3000/topics/599dcb67f0f16317844583fc
+  // Grabs a reply with the _id of this.props.match.params.id
+  // e.g. localhost:3000/replies/599dcb67f0f16317844583fc
   componentDidMount() {
-    API.getTopic(this.props.match.params.id)
+    API.getReply(this.props.match.params.id)
       .then(res => this.setState({topic: res.data}))
       .catch(err => console.log(err));
   }
 
   render() {
     return( //HTML IN HERE!
-      <h1>Some Topic</h1>
+      <h1>Some Reply</h1>
     );
   }
 }
 
-export default Topic;
+export default Reply;

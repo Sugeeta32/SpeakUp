@@ -5,8 +5,9 @@ module.exports = {
     console.log(`Creating ${req.body.newSubject} topic...`);
     connection.query("INSERT INTO topics SET ?",
     {
-      title: req.body.newSubject,
+      subject: req.body.newSubject,
       content: req.body.newContent,
+      category: req.body.category,
       userID: req.body.userID,
       datePosted: GetDate()
     }, function(err, res) {
@@ -17,6 +18,13 @@ module.exports = {
   allTopics: function(req, res) {
     console.log("Displaying all topics...");
     connection.query("SELECT * FROM topics", function(err, res) {
+      if(err) throw err;
+      return res.json();
+    });
+  },
+  allTopicsInCategory: function(req, res) {
+    console.log("Displaying all topics...");
+    connection.query(`SELECT FROM topics WHERE category = ${req.body.category}`, function(err, res) {
       if(err) throw err;
       return res.json();
     });
