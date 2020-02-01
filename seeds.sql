@@ -8,7 +8,7 @@ CREATE TABLE users (
   password VARCHAR(30) NOT NULL,
   email VARCHAR(50) NOT NULL,
   dateJoined DATETIME,
-  postNumber INTEGER(10),
+  postNumber INTEGER NOT NULL DEFAULT(0),
   PRIMARY KEY (userID)
 );
 
@@ -19,8 +19,10 @@ CREATE TABLE topics (
   content TEXT,
   userID INTEGER NOT NULL,
   datePosted DATETIME,
+  edited BOOLEAN NOT NULL DEFAULT(0),
+  lastEdited DATETIME,
   PRIMARY KEY (topicID),
-  FOREIGN KEY (userID) REFERENCES users(userID)
+  FOREIGN KEY (userID) REFERENCES users(userID) ON DELETE CASCADE
 );
 
 CREATE TABLE replies (
@@ -31,7 +33,10 @@ CREATE TABLE replies (
   content MEDIUMTEXT,
   userID INTEGER NOT NULL,
   datePosted DATETIME,
-  PRIMARY KEY (postID),
-  FOREIGN KEY (topicID) REFERENCES topics(topicID),
-  FOREIGN KEY (userID) REFERENCES users(userID)
+  edited BOOLEAN NOT NULL DEFAULT(0),
+  lastEdited DATETIME,
+  PRIMARY KEY (replyID),
+  FOREIGN KEY (topicID) REFERENCES topics(topicID) ON DELETE CASCADE,
+  FOREIGN KEY (userID) REFERENCES users(userID) ON DELETE CASCADE,
+  FOREIGN KEY (repliedID) REFERENCES replies(replyID) ON DELETE CASCADE
 )
