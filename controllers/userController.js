@@ -29,14 +29,14 @@ module.exports = {
     });
     console.log(`${req.body.id} deleted!`)
   },
-  getAllTopics: function(req, res) {
+  getAllTopicsByUser: function(req, res) {
     console.log(`Getting all topics by ${req.body.id}...`)
     connection.query(`SELECT FROM topics WHERE userID = ${req.body.id}`, function(err, res) {
       if(err) throw err;
       return res.json();
     });
   },
-  getAllReplies: function(req, res) {
+  getAllRepliesByUser: function(req, res) {
     console.log(`Getting all replies by ${req.body.id}...`)
     connection.query(`SELECT FROM replies WHERE userID = ${req.body.id}`, function(err, res) {
       if(err) throw err;
