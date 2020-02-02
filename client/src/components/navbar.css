@@ -1,26 +1,25 @@
-.navbar {
+/* .navbar {
     height: 50px;
     background-color: ghostwhite;
-}
+} */
 
-h1 {
+/* h1 {
     color: rgb(17, 8, 139);
     text-align: left;
     font-family: Georgia, 'Times New Roman', Times, serif;
-}
+} */
 
-.text-secondary {
-    text-align: right;
-}
 
-nav.navbar {
+
+/* nav.navbar {
     margin-bottom: 0;
     background-color: #bbbbbb;
-  }
+  } */
   .AppLogo{
       height: 50px;
       width:150px;
   } 
-
-
+  #sugeeta{
+      color: white;
+  }
   
