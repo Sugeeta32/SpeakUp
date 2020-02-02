@@ -51,16 +51,16 @@ class Navbar extends Component {
                         ) : (
                             <section className="navbar-section">
                                 <Link to="/" className="btn btn-link text-secondary ml-5">
-                                    <span  id ="sugeeta">home</span>
+                                    <span  id ="sugeeta">Home</span>
                                 </Link>
                                 <Link to="/login" className="btn btn-link text-secondary">
-                                    <span  id ="sugeeta">login</span>
+                                    <span  id ="sugeeta">Login</span>
 				                </Link>
                                 <Link to="/signup" className="btn btn-link">
-                                    <span  id ="sugeeta">sign up</span>
+                                    <span  id ="sugeeta">Sign Up</span>
 				                </Link>
                                 <Link to="/forum" className="btn btn-link">
-                                    <span  id ="sugeeta">stories</span>
+                                    <span  id ="sugeeta">Stories</span>
 				                </Link>
                             </section>
                         )}

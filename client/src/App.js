@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom'
 import './App.css'
 // components
 // import SignIn from "./pages/SignIn";
-
+import Forum from './components/forum'
 import Navbar from './components/navbar'
 //import Home from './components/home'
 
@@ -13,6 +13,10 @@ import Navbar from './components/navbar'
 class App extends Component {
   constructor() {
     super()
+    this.state = {
+      loggedIn: false,
+      username: null
+    }
   }
 
   
@@ -21,7 +25,13 @@ class App extends Component {
     return (
       <div className="App">
       <Navbar/>
-       
+      <Route
+          exact path="/forum"
+          render={() =>
+            <Forum
+              loggedIn={this.state.loggedIn}
+            />}
+        />
       </div>
     );
   }
