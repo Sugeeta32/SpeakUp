@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../logo.png";
+//import logo from "../../logo.png";
 export class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -11,7 +11,7 @@ export class Login extends React.Component {
         <div className="header">Login</div>
         <div className="content">
         <div className="image">
-            <img src={logo} />
+            {/* //<img src={logo} /> */}
           </div>
 
           <div className="form">
@@ -26,7 +26,7 @@ export class Login extends React.Component {
           </div>
         </div>
         <div className="footer">
-          <button type="button" className="btn">
+          <button type="submit" className="btn1">
             Login
           </button>
         </div>

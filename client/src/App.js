@@ -1,34 +1,50 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-//import "./style.scss";
-import Sidebar from "./components/Sidebar";
-// import { Login, Register } from "./components/login/index";
-import SignIn from "./pages/SignIn";
-import Home from "./pages/Home";
-import NoMatch from "./pages/NoMatch";
+import React, { Component } from 'react';
+import axios from 'axios'
+import { Route, Switch } from 'react-router-dom'
+import './App.css'
 
-import Nav from "./components/Nav";
-function App() {
-  return (
-    <Router>
-      <div>
-      
-        <Nav />
-        <Sidebar/>
+import Forum from './components/forum'
+import Navbar from './components/navbar'
+import SignIn from './pages/SignIn'
+import NoMatch from './pages/NoMatch'
+import Home from './pages/Home'
+//import Home from './components/home'
+
+
+
+class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      loggedIn: false,
+      username: null
+    }
+  }
+
+
+
+  render() {
+    return (
+      <div className="App">
+        <Navbar />
         <Switch>
-       
-        
-        <Route  exact path="/" component={Home} />
-        <Route  exact path="/Signin" component={SignIn} />
-        <Route  component={NoMatch} />
+          <Route
+            exact path="/forum"
+            render={() =>
+              <Forum
+                loggedIn={this.state.loggedIn}
+              />}
+          />
+          <Route
+            exact path="/"
+            component={Home} />
+          <Route path="/login" component={SignIn} />
+          <Route path="/signup" component={SignIn} />
+          <Route component={NoMatch} />
         </Switch>
-      
       </div>
-    </Router>
-
-
-  )
+    );
+  }
 }
 
 export default App;
-
