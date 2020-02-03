@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import './App.css'
 
 import Forum from './components/forum'
 import Navbar from './components/navbar'
 import SignIn from './pages/SignIn'
+import NoMatch from './pages/NoMatch'
 //import Home from './components/home'
 
 
@@ -25,7 +26,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
-
+<Switch>
         <Route
           exact path="/forum"
           render={() =>
@@ -38,6 +39,8 @@ class App extends Component {
 
         <Route path="/login" component={SignIn} />
         <Route path="/signup" component={SignIn} />
+        <Route component={NoMatch} />
+        </Switch>
       </div>
     );
   }
