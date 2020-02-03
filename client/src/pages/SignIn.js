@@ -38,7 +38,7 @@ class SignIn extends React.Component {
     return (
     <div>
     
-      <div className="App">
+      <div className="App1">
               <div className="login">
           <div className="container" ref={ref => (this.container = ref)}>
             {isLogginActive && (
