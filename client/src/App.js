@@ -10,6 +10,7 @@ import Login from './components/login'
 import NoMatch from './pages/NoMatch'
 import Home from './pages/Home'
 import Signup from './components/signup'
+import Newstory from "./components/newstory"
 //import Home from './components/home'
 
 
@@ -72,6 +73,15 @@ class App extends Component {
             < Login updateUser={this.updateUser} />
           } />
          <Route path="/signup" render ={() => <Signup signup = {this.signup } /> }/>
+
+         <Route
+          path="/newstory"
+          render={() =>
+            <Newstory
+              username={this.state.username}
+              loggedIn={this.state.loggedIn}
+            />}
+        />
           <Route component={NoMatch} />
         </Switch>
       </div>
