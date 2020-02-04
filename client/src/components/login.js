@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../logo.png";
+import "./style.scss"
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 
@@ -18,6 +18,14 @@ export class Login extends React.Component {
     //handle the change in username and password
     this.handleChange = this.handleChange.bind(this)
   }
+
+//handlechange function
+handleChange(e){
+  this.setState({
+    [e.target.name]: e.target.value
+  })
+}
+
 //handlesubmit funtion
   handleSubmit(e) {
     e.preventDefault()
@@ -46,12 +54,7 @@ export class Login extends React.Component {
 
   }
 
-  //handlechange function
-  handleChange(e){
-    this.setState({
-      [e.target.name]: e.target.value
-    })
-  }
+  
 
   render() {
     if(this.state.redirectTo){
@@ -62,7 +65,7 @@ return<Redirect to ={{pathname: this.state.redirectTo}}/>
         <div className="header">Login</div>
         <div className="content">
           <div className="image">
-            <img src={logo} />
+            {/* <img src={logo} /> */}
           </div>
 
           <div className="form">
@@ -87,3 +90,4 @@ return<Redirect to ={{pathname: this.state.redirectTo}}/>
   }
   }
 }
+export default Login;

@@ -1,9 +1,9 @@
 import React from "react";
-import logo from "../../logo.png";
+import "./style.scss"
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 
-export class Register extends React.Component {
+export class Signup extends React.Component {
   constructor(props) {
     super(props);
     //set the state to initial value
@@ -18,6 +18,13 @@ export class Register extends React.Component {
     //handle the change in username and password
     this.handleChange = this.handleChange.bind(this)
 
+  }
+
+  //handlechange function
+  handleChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
   }
 
   handleSubmit(e) {
@@ -50,19 +57,14 @@ export class Register extends React.Component {
 
   }
 
-  //handlechange function
-  handleChange(e) {
-    this.setState({
-      [e.target.name]: e.target.value
-    })
-  }
+  
 
   render() {
     if (this.state.redirectTo) {
       return <Redirect to={{ pathname: this.state.redirectTo }} />
     } else {
       return (
-        <div className="base-container" ref={this.props.containerRef}>
+        <div className="base-container">
           <div className="header">Register</div>
           <div className="content">
 
@@ -94,3 +96,4 @@ export class Register extends React.Component {
     }
   }
 }
+export default Signup;
