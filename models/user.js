@@ -14,6 +14,7 @@ const userSchema = new Schema({
 // Define schema methods
 userSchema.methods = {
 	checkPassword: function (inputPassword) {
+		console.log('sugeeta chkpassworduser.js------->')
 		return bcrypt.compareSync(inputPassword, this.password)
 	},
 	hashPassword: plainTextPassword => {
@@ -23,6 +24,7 @@ userSchema.methods = {
 
 // Define hooks for pre-saving
 userSchema.pre('save', function (next) {
+	console.log('sugeeta user.js------->');
 	if (!this.password) {
 		console.log('models/user.js =======NO PASSWORD PROVIDED=======')
 		next()

@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const Adventure = require('../models/adventure')
-const Comment = require('../models/comment')
+//const Adventure = require('../models/adventure')
+//const Comment = require('../models/comment')
 
 router.post("/post", (req,res) => {
     const {title, author, genre, description} = req.body

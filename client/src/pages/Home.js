@@ -1,9 +1,26 @@
-import React from "react";
+import React, { Component } from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Jumbotron from "../components/Jumbotron";
+import axios from 'axios'
 
+
+class Descriptions extends Component {
+    state = {
+        articles: []
+    }
+
+    componentDidMount(){
+        this.getDescriptions()
+    }
+
+    getDescriptions = () => {
+      axios.get("/all").then(res => {
+        console.log(res.data)
+      }) 
+    }
+} 
 function Home() {
     return (
 
