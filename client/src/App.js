@@ -11,6 +11,7 @@ import NoMatch from './pages/NoMatch'
 import Home from './pages/Home'
 import Signup from './components/signup'
 import Newstory from "./components/newstory"
+import Emotion from "./components/story/emotion"
 //import Home from './components/home'
 
 
@@ -79,6 +80,14 @@ class App extends Component {
           render={() =>
             <Newstory
               username={this.state.username}
+              loggedIn={this.state.loggedIn}
+            />}
+        />
+
+<Route
+          path="/forum/emotion"
+          render={() =>
+            <Emotion
               loggedIn={this.state.loggedIn}
             />}
         />

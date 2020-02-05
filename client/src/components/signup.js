@@ -32,7 +32,7 @@ export class Signup extends React.Component {
     console.log("register handlesubmit, username : " + this.state.username)
 
     //request server to add new username,email and paasword
-    axios.post("./user/", {
+    axios.post("/user/", {
       username: this.state.username,
       email: this.state.email,
       password: this.state.password
