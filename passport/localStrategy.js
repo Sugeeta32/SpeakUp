@@ -1,6 +1,8 @@
 const User = require('../models/user')
-const LocalStrategy = require('passport-local').Strategy
 
+//This module lets you authenticate using a username and password in your Node.js applications.
+const LocalStrategy = require('passport-local').Strategy
+//local configuration
 const strategy = new LocalStrategy(
 	{
 		usernameField: 'username' // not necessary, DEFAULT

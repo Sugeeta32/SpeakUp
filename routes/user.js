@@ -3,33 +3,34 @@ const router = express.Router()
 const User = require('../models/user')
 const passport = require('../passport')
 
-router.post("/",(req,res)=>{
+router.post("/", (req, res) => {
     console.log('sugeeta create user signup');
-    const{username, password} = req.body
-    console.log("registration page"+ req.body)
- // ADD VALIDATION
- User.findOne({ username: username }, (err, user) => {
-    console.log('sug findOne findOne-------%%%');
-    if (err) {
-        console.log('User.js post error: ', err);
-    } else if (user) {
-        res.json({
-            error: `Sorry, already a user with the username: ${username}`
-        })
-    }
-    else {
-    const newUser = new User({
-        username: username,
-        password: password
-    })
-    newUser.save((err, savedUser)=>{
-        if(err)return res.json(err)
-            res.json(savedUser)
+    const { username, password } = req.body
+    console.log("registration page" + req.body)
+    
+    // ADD VALIDATION
+    User.findOne({ username: username }, (err, user) => {
+        console.log('sug findOne findOne-------%%%');
+        if (err) {
+            console.log('User.js post error: ', err);
+        } else if (user) {
+            res.json({
+                error: `Sorry, already a user with the username: ${username}`
+            })
+        }
+        else {
+            const newUser = new User({
+                username: username,
+                password: password
+            })
+            newUser.save((err, savedUser) => {
+                if (err) return res.json(err)
+                res.json(savedUser)
 
-        
+
+            })
+        }
     })
-}
-})
 })
 
 router.post(
