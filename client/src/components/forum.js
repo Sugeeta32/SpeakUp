@@ -30,12 +30,12 @@ class Forum extends Component {
                 <div className="genres">
                     <ul>
                         <li><Link to="/forum">All</Link></li>
-                        <li><Link to="/forum/funny">Family</Link></li>
-                        <li><Link to="/forum/horror">Social</Link></li>
-                        <li><Link to="/forum/romance">Health</Link></li>
-                        <li><Link to="/forum/mystery">Psychological</Link></li>
-                        <li><Link to="/forum/drama">Emotional</Link></li>
-                        <li><Link to="/forum/fantasy">Financial</Link></li>
+                        <li><Link to="/forum/family">Family</Link></li>
+                        <li><Link to="/forum/social">Social</Link></li>
+                        <li><Link to="/forum/health">Health</Link></li>
+                        <li><Link to="/forum/psych">Psychological</Link></li>
+                        <li><Link to="/forum/emotion">Emotional</Link></li>
+                        <li><Link to="/forum/finance">Financial</Link></li>
                     </ul>
                 </div>
                 <div className="jumbotron jumbotron-fluid" id="alltron">

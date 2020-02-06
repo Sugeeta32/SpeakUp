@@ -35,7 +35,7 @@ render(){
             </div>
             <div className="jumbotron jumbotron-fluid" id="romancetron">
                     <div className="container">
-                        <h1 className="display-4 text-center">Health Stories</h1>
+                        <h1 className="display-4 text-center">Emotional Stories</h1>
                         <p className="lead text-center">...</p>
                     </div>
                 </div>

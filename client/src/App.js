@@ -6,13 +6,18 @@ import './App.css'
 import Forum from './components/forum'
 import Navbar from './components/navbar'
 import Login from './components/login'
-//import SignIn from './pages/SignIn'
 import NoMatch from './pages/NoMatch'
 import Home from './pages/Home'
 import Signup from './components/signup'
 import Newstory from "./components/newstory"
 import Emotion from "./components/story/emotion"
-//import Home from './components/home'
+import Social from "./components/story/social"
+import Finance from "./components/story/finance"
+import Health from "./components/story/health"
+import Psych from "./components/story/psych"
+import Family from "./components/story/family"
+//import Comments from "./components/comments"
+
 
 
 
@@ -63,17 +68,19 @@ class App extends Component {
           <Route
             exact path="/"
             component={Home} />
-          <Route
+          
+          <Route path="/login" render={() =>
+            < Login updateUser={this.updateUser} />
+          } />
+         <Route path="/signup" render ={() => <Signup signup = {this.signup } /> }/>
+
+         <Route
             exact path="/forum"
             render={() =>
               <Forum
                 loggedIn={this.state.loggedIn}
               />}
           />
-          <Route path="/login" render={() =>
-            < Login updateUser={this.updateUser} />
-          } />
-         <Route path="/signup" render ={() => <Signup signup = {this.signup } /> }/>
 
          <Route
           path="/newstory"
@@ -91,6 +98,50 @@ class App extends Component {
               loggedIn={this.state.loggedIn}
             />}
         />
+        
+<Route
+          path="/forum/family"
+          render={() =>
+            <Family
+              loggedIn={this.state.loggedIn}
+            />}
+        />
+        
+<Route
+          path="/forum/social"
+          render={() =>
+            <Social
+              loggedIn={this.state.loggedIn}
+            />}
+        />
+        
+<Route
+          path="/forum/health"
+          render={() =>
+            <Health
+              loggedIn={this.state.loggedIn}
+            />}
+        />
+        
+<Route
+          path="/forum/psych"
+          render={() =>
+            <Psych
+              loggedIn={this.state.loggedIn}
+            />}
+        />
+        
+<Route
+          path="/forum/finance"
+          render={() =>
+            <Finance
+              loggedIn={this.state.loggedIn}
+            />}
+        />
+        {/* <Route
+          exact path="/story/:id"
+          component={Comments} />
+         */}
           <Route component={NoMatch} />
         </Switch>
       </div>
