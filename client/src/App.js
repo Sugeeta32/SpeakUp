@@ -16,7 +16,7 @@ import Finance from "./components/story/finance"
 import Health from "./components/story/health"
 import Psych from "./components/story/psych"
 import Family from "./components/story/family"
-//import Comments from "./components/comments"
+import Comments from "./components/comments"
 
 
 
