@@ -24,6 +24,7 @@ router.post("/", (req, res) => {
                 password: password
             })
             newUser.save((err, savedUser) => {
+                console.log('sug save findOne-------%%%');
                 if (err) return res.json(err)
                 res.json(savedUser)
 

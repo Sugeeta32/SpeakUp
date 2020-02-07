@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const storySchema =new Schema({
+
+
+const  adventureSchema = new Schema({
     title: { type: String, required: true },
     author: { type: String, required: true },
     genre: { type: String },
@@ -14,5 +16,6 @@ const storySchema =new Schema({
     ]
   });
 
-  const Story = mongoose.model("Story",storySchema);
-  module.exports = Story;
+  const Adventure = mongoose.model("Adventure", adventureSchema);
+
+module.exports = Adventure;

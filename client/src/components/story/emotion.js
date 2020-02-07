@@ -4,26 +4,26 @@ import { Link } from 'react-router-dom';
 import Results from "../Result"
 
 
-class Emotion extends Component{
+class Emotion extends Component {
     state = {
         articles: []
-}
-componentDidMount(){
-    this.getEmotion()
-}
-getEmotion = ()=>{
-    axios.get("/emotion").then(res=>{
-this.setState({ articles: res.data})
+    }
+    componentDidMount() {
+        this.getEmotion()
+    }
+    getEmotion = () => {
+        axios.get("/emotion").then(res => {
+            this.setState({ articles: res.data })
 
-    })
+        })
 
-}
-render(){
-    const loggedIn = this.props.loggedIn;
-    return(
-        <Fragment>
-            <div className = "genres">
-            <ul>
+    }
+    render() {
+        const loggedIn = this.props.loggedIn;
+        return (
+            <Fragment>
+                <div className="genres">
+                    <ul>
                         <li><Link to="/forum">All</Link></li>
                         <li><Link to="/forum/family">Family</Link></li>
                         <li><Link to="/forum/social">Social</Link></li>
@@ -32,8 +32,8 @@ render(){
                         <li><Link to="/forum/emotion">Emotional</Link></li>
                         <li><Link to="/forum/finance">Financial</Link></li>
                     </ul>
-            </div>
-            <div className="jumbotron jumbotron-fluid" id="romancetron">
+                </div>
+                <div className="jumbotron jumbotron-fluid" id="romancetron">
                     <div className="container">
                         <h1 className="display-4 text-center">Emotional Stories</h1>
                         <p className="lead text-center">...</p>
@@ -67,8 +67,8 @@ render(){
                     </div>
                 </div>
 
-        </Fragment>
-    )
-}
+            </Fragment>
+        )
+    }
 }
 export default Emotion;

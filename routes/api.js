@@ -1,58 +1,58 @@
 const express = require('express')
 const router = express.Router()
-const Story = require('../models/story')
+const Adventure = require('../models/adventure')
 const Comment = require('../models/comment')
 
 router.post("/post", (req, res) => {
     const { title, author, genre, description } = req.body
 
-    const newStory = new Story({
+    const newAdventure = new Adventure({
         title: title,
         author: author,
         genre: genre,
         description: description
     })
 
-    newStory.save((err, savedTopic) => {
+    newAdventure.save((err, savedTopic) => {
         if (err) return res.json(err)
         res.json(savedTopic)
     })
 })
 
-router.get("/all", (req, res) => {
-    Story.find({}).sort({ date: -1 }).then(results => res.json(results))
+router.get("/all", (req,res) => {
+    Adventure.find({}).sort({date: -1}).then(results => res.json(results))
 })
 
-router.get("/family", (req, res) => {
-    Story.find({ genre: "family" }).sort({ date: -1 }).then(results => res.json(results))
+router.get("/family", (req,res) => {
+    Adventure.find({genre: "family"}).sort({date: -1}).then(results => res.json(results))
 })
 
-router.get("/social", (req, res) => {
-    Story.find({ genre: "social" }).sort({ date: -1 }).then(results => res.json(results))
+router.get("/social", (req,res) => {
+    Adventure.find({genre: "social"}).sort({date: -1}).then(results => res.json(results))
 })
 
-router.get("/psych", (req, res) => {
-    Story.find({ genre: "psychological" }).sort({ date: -1 }).then(results => res.json(results))
+router.get("/psych", (req,res) => {
+    Adventure.find({genre: "psych"}).sort({date: -1}).then(results => res.json(results))
 })
 
-router.get("/emotion", (req, res) => {
-    Story.find({ genre: "emotional" }).sort({ date: -1 }).then(results => res.json(results))
+router.get("/health", (req,res) => {
+    Adventure.find({genre: "health"}).sort({date: -1}).then(results => res.json(results))
 })
 
-router.get("/health", (req, res) => {
-    Story.find({ genre: "health" }).sort({ date: -1 }).then(results => res.json(results))
+router.get("/emotion", (req,res) => {
+    Adventure.find({genre: "emotion"}).sort({date: -1}).then(results => res.json(results))
 })
 
-router.get("/finance", (req, res) => {
-    Story.find({ genre: "financial" }).sort({ date: -1 }).then(results => res.json(results))
+router.get("/finance", (req,res) => {
+    Adventure.find({genre: "finance"}).sort({date: -1}).then(results => res.json(results))
 })
 
-router.get("/api/story/:id", (req, res) => {
-    Story.findById(req.params.id).then(results => res.json(results))
+router.get("/api/story/:id", (req,res) => {
+    Adventure.findById(req.params.id).then(results => res.json(results))
 })
 
-router.post("/submit/:id", function (req, res) {
-    const { author, body, postId } = req.body
+router.post("/submit/:id", function(req,res){
+    const { author , body, postId } = req.body
 
     const newComment = new Comment({
         author: author,

@@ -9,7 +9,7 @@ import Login from './components/login'
 import NoMatch from './pages/NoMatch'
 import Home from './pages/Home'
 import Signup from './components/signup'
-import Newstory from "./components/newstory"
+import NewStory from "./components/newstory"
 import Emotion from "./components/story/emotion"
 import Social from "./components/story/social"
 import Finance from "./components/story/finance"
@@ -40,8 +40,8 @@ class App extends Component {
   }
   getUser() {
     axios.get('/user/').then(response => {
-      console.log('Get user response: ')
-      console.log(response.data)
+      console.log('App.js-->Get user response: ')
+      console.log('app.js getUser-->'+response.data);
       if (response.data.user) {
         console.log('Get User: There is a user saved in the server session: ')
 
@@ -85,7 +85,7 @@ class App extends Component {
          <Route
           path="/newstory"
           render={() =>
-            <Newstory
+            <NewStory
               username={this.state.username}
               loggedIn={this.state.loggedIn}
             />}
@@ -138,10 +138,10 @@ class App extends Component {
               loggedIn={this.state.loggedIn}
             />}
         />
-        {/* <Route
+        <Route
           exact path="/story/:id"
           component={Comments} />
-         */}
+        
           <Route component={NoMatch} />
         </Switch>
       </div>
