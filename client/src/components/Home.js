@@ -24,12 +24,13 @@ import './home.css'
 // } 
 function Home() {
     return (
-
+<div className="shadow-lg">
         <Jumbotron>
+            
             <Container>
                 <Row >
                   
-                        <Col md={6}>{`SpeakUp is a share your story site where you can share your story anonymously and unburden yourself. Feel free to ask your question or share your story .`}</Col>
+                        <Col md={6} >{`SpeakUp is a share your story site where you can share your story anonymously and unburden yourself. Feel free to ask your question or share your story .`}</Col>
                         <Col md={{ span: 4, offset: 0 }}>{`💬 Share your story, strengthen your resilience`}</Col>
                         </Row>
                         
@@ -44,6 +45,7 @@ function Home() {
             </Container>
 
         </Jumbotron>
+        </div>
     );
 }
 

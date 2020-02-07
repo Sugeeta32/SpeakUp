@@ -1,11 +1,14 @@
- /* .navbar {
+ .navbar {
     height: 50px;
-    background: #512DA8;
+    background:#33691e;
+    color: FFFFFF;
    
-}  */
+    }
+
+
 
 /* h1 {
-    color: rgb(17, 8, 139);
+    color: FFFFFF;
     text-align: left;
     font-family: Georgia, 'Times New Roman', Times, serif;
 } */
@@ -20,9 +23,11 @@
       height: 50px;
       width:175px;
   } 
-  /* #sugeeta{
-      color: white;
+  #sugeeta{
+    color: white;
+    
       
+  }
+  /* a:hover {
+    background-color:  #D1C4E9;
   } */
-  
-  

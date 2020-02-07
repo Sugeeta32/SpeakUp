@@ -1,5 +1,6 @@
 .genres {
-    background: rgb(182, 108, 29);
+  
+    background:#689f38;
     text-align: center;
 }
 
@@ -15,7 +16,7 @@
 }
 
 .genres li a {
-    color: rgb(80, 70, 70);
+    color: white;
 }
 
 .createNew {
