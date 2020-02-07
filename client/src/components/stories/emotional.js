@@ -1,23 +1,26 @@
 import React, { Fragment, Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import Results from "../Result"
-
+import Results from '../Result'
+import { Link } from 'react-router-dom'
+//import "../../components/style.css"
 
 class Emotion extends Component {
+
     state = {
         articles: []
     }
+
     componentDidMount() {
         this.getEmotion()
     }
+
     getEmotion = () => {
         axios.get("/emotion").then(res => {
             this.setState({ articles: res.data })
-
         })
-
+        console.log(this.state.articles)
     }
+
     render() {
         const loggedIn = this.props.loggedIn;
         return (
@@ -39,7 +42,6 @@ class Emotion extends Component {
                         <p className="lead text-center">...</p>
                     </div>
                 </div>
-
                 <div className="container">
                     <div className="row">
                         <div className="createNew float-right">
@@ -66,9 +68,9 @@ class Emotion extends Component {
                         </div>
                     </div>
                 </div>
-
             </Fragment>
         )
     }
 }
+
 export default Emotion;

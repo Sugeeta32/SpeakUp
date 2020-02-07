@@ -1,45 +1,48 @@
 import React, { Fragment, Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import Results from "../Result"
+import Results from '../Result'
+import { Link } from 'react-router-dom'
+//import "../../components/style.css"
 
 
-class Social extends Component{
+class Health extends Component {
+
     state = {
         articles: []
-}
-componentDidMount(){
-    this.getSocial()
-}
-getSocial = ()=>{
-    axios.get("/social").then(res=>{
-this.setState({ articles: res.data})
+    }
 
-    })
+    componentDidMount() {
+        this.getHealth()
+    }
 
-}
-render(){
-    const loggedIn = this.props.loggedIn;
-    return(
-        <Fragment>
-            <div className = "genres">
-            <ul>
-                        <li><Link to="/forum">All</Link></li>
-                        <li><Link to="/forum/family">Family</Link></li>
+    getHealth = () => {
+        axios.get("/health").then(res => {
+            this.setState({ articles: res.data })
+        })
+        console.log(this.state.articles)
+    }
+
+    render() {
+        const loggedIn = this.props.loggedIn;
+        return (
+            <Fragment>
+                <div className="genres">
+                    <ul>
+                    <li><Link to="/forum">All</Link></li>
+                        <li><Link to="/forum/Family">Family</Link></li>
                         <li><Link to="/forum/social">Social</Link></li>
                         <li><Link to="/forum/health">Health</Link></li>
                         <li><Link to="/forum/psych">Psychological</Link></li>
                         <li><Link to="/forum/emotion">Emotional</Link></li>
                         <li><Link to="/forum/finance">Financial</Link></li>
                     </ul>
-            </div>
-            <div className="jumbotron jumbotron-fluid" id="romancetron">
+                </div>
+                <div className="jumbotron jumbotron-fluid" id="mysterytron">
                     <div className="container">
-                        <h1 className="display-4 text-center">Social Stories</h1>
+                        <h1 className="display-4 text-center">Health Stories</h1>
                         <p className="lead text-center">...</p>
                     </div>
                 </div>
-
                 <div className="container">
                     <div className="row">
                         <div className="createNew float-right">
@@ -66,9 +69,9 @@ render(){
                         </div>
                     </div>
                 </div>
+            </Fragment>
+        )
+    }
+}
 
-        </Fragment>
-    )
-}
-}
-export default Social;
+export default Health;

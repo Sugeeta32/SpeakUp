@@ -98,7 +98,6 @@ class Comments extends Component {
                                 name="description"
                                 rows="10"
                                 cols="150"
-                                id="commentBox"
                                 value={this.state.comment}
                                 onChange={(event) => this.setState({ comment: event.target.value })}
                             />

@@ -3,8 +3,8 @@ const router = express.Router()
 const Adventure = require('../models/adventure')
 const Comment = require('../models/comment')
 
-router.post("/post", (req, res) => {
-    const { title, author, genre, description } = req.body
+router.post("/post", (req,res) => {
+    const {title, author, genre, description} = req.body
 
     const newAdventure = new Adventure({
         title: title,
@@ -27,20 +27,20 @@ router.get("/family", (req,res) => {
     Adventure.find({genre: "family"}).sort({date: -1}).then(results => res.json(results))
 })
 
-router.get("/social", (req,res) => {
-    Adventure.find({genre: "social"}).sort({date: -1}).then(results => res.json(results))
-})
-
-router.get("/psych", (req,res) => {
-    Adventure.find({genre: "psych"}).sort({date: -1}).then(results => res.json(results))
-})
-
 router.get("/health", (req,res) => {
     Adventure.find({genre: "health"}).sort({date: -1}).then(results => res.json(results))
 })
 
+router.get("/social", (req,res) => {
+    Adventure.find({genre: "social"}).sort({date: -1}).then(results => res.json(results))
+})
+
 router.get("/emotion", (req,res) => {
     Adventure.find({genre: "emotion"}).sort({date: -1}).then(results => res.json(results))
+})
+
+router.get("/psych", (req,res) => {
+    Adventure.find({genre: "psych"}).sort({date: -1}).then(results => res.json(results))
 })
 
 router.get("/finance", (req,res) => {

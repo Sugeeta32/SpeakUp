@@ -4,23 +4,24 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Jumbotron from "../components/Jumbotron";
 import axios from 'axios'
+import './home.css'
 
 
-class Descriptions extends Component {
-    state = {
-        articles: []
-    }
+// class Descriptions extends Component {
+//     state = {
+//         articles: []
+//     }
 
-    componentDidMount(){
-        this.getDescriptions()
-    }
+//     componentDidMount(){
+//         this.getDescriptions()
+//     }
 
-    getDescriptions = () => {
-      axios.get("/all").then(res => {
-        console.log(res.data)
-      }) 
-    }
-} 
+//     getDescriptions = () => {
+//       axios.get("/all").then(res => {
+//         console.log(res.data)
+//       }) 
+//     }
+// } 
 function Home() {
     return (
 

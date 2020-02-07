@@ -12,14 +12,14 @@ const user = require('./routes/user')
 const routes = require('./routes/api')
 
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
 // Serve up static assets
-app.use(express.static("client/build"));
+//app.use(express.static("client/build"));
 
 // Passport intialization and dealing with sessions
-app.use(passport.initialize());
-app.use(passport.session()) ;// calls the deserializeUser
+// app.use(passport.initialize());
+// app.use(passport.session()) ;// calls the deserializeUser
 
 app.use(
 	//javascript object with these properties
@@ -33,6 +33,16 @@ app.use(
 	})
 )
 
+// Passport
+app.use(passport.initialize())
+app.use(passport.session()) // calls the deserializeUser
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+// Serve up static assets
+app.use(express.static("client/build"));
+// Add routes, both API and view
+// app.use(routes);
 
 // Connect to the Mongo DB
 var databaseUri = "mongodb://localhost/speakup";
@@ -43,13 +53,13 @@ if (process.env.MONGODB_URI) {
   mongoose.connect(databaseUri);
 };
 
-var db = mongoose.connection;
+var dbm = mongoose.connection;
 
-db.on("error", function(error) {
+dbm.on("error", function(error) {
   console.log("Mongoose Error: ", error);
 });
 
-db.once("open", function() {
+dbm.once("open", function() {
   console.log("Mongoose connection successful.");
 });
 

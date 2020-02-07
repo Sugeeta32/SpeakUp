@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { Route, Switch } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import './App.css'
 
 import Forum from './components/forum'
 import Navbar from './components/navbar'
-import Login from './components/login'
-import NoMatch from './pages/NoMatch'
-import Home from './pages/Home'
+import LoginForm from './components/login-form'
+import Footer from './components/footer'
+import Home from './components/Home'
 import Signup from './components/signup'
-import NewStory from "./components/newstory"
-import Emotion from "./components/story/emotion"
-import Social from "./components/story/social"
-import Finance from "./components/story/finance"
-import Health from "./components/story/health"
-import Psych from "./components/story/psych"
-import Family from "./components/story/family"
-import Comments from "./components/comments"
-
+import NewStory from './components/newstory'
+import Family from './components/stories/family'
+import Social from './components/stories/social'
+import Health from './components/stories/health'
+import Psych from './components/stories/psychological'
+import Emotion from './components/stories/emotional'
+import Finance from './components/stories/financial'
+import Comments from './components/comments'
+//import Family from './components/stories/family';
+//import Social from './components/stories/social';
+//import Footer from './components/footer'
 
 
 
@@ -64,14 +66,13 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
-        <Switch>
+        
           <Route
             exact path="/"
             component={Home} />
           
           <Route path="/login" render={() =>
-            < Login updateUser={this.updateUser} />
-          } />
+         < LoginForm updateUser={this.updateUser} /> } />
          <Route path="/signup" render ={() => <Signup signup = {this.signup } /> }/>
 
          <Route
@@ -90,48 +91,35 @@ class App extends Component {
               loggedIn={this.state.loggedIn}
             />}
         />
-
-<Route
-          path="/forum/emotion"
-          render={() =>
-            <Emotion
-              loggedIn={this.state.loggedIn}
-            />}
-        />
-        
-<Route
+        <Route
           path="/forum/family"
           render={() =>
             <Family
               loggedIn={this.state.loggedIn}
             />}
         />
-        
-<Route
+        <Route
           path="/forum/social"
           render={() =>
             <Social
               loggedIn={this.state.loggedIn}
             />}
         />
-        
-<Route
+        <Route
           path="/forum/health"
           render={() =>
             <Health
               loggedIn={this.state.loggedIn}
             />}
         />
-        
-<Route
+        <Route
           path="/forum/psych"
           render={() =>
             <Psych
               loggedIn={this.state.loggedIn}
             />}
         />
-        
-<Route
+        <Route
           path="/forum/finance"
           render={() =>
             <Finance
@@ -139,11 +127,18 @@ class App extends Component {
             />}
         />
         <Route
+          path="/forum/emotion"
+          render={() =>
+            <Emotion
+              loggedIn={this.state.loggedIn}
+            />}
+        />
+        <Route
           exact path="/story/:id"
           component={Comments} />
         
-          <Route component={NoMatch} />
-        </Switch>
+          <Footer/>
+        
       </div>
     );
   }
