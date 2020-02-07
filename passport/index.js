@@ -1,7 +1,10 @@
 const passport = require('passport')
 const LocalStrategy = require('./localStrategy')
 const User = require('../models/user')
+//seralizer and deserializer is only necessary when we use session
+// what serialzer does is, it creates the cookie and store the user id
 
+//in deserializer passport takes the id,so that authentication is done
 // called on login, saves the id to session req.session.passport.user = {id:'..'}
 passport.serializeUser((user, done) => {
 	console.log('*** serializeUser called, user: ')

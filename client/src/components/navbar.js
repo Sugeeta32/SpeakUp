@@ -34,7 +34,7 @@ class Navbar extends Component {
         
         return (
             //  <nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-        <nav className="navbar navbar-expand-sm bg-dark navbar-dark" >  
+        <nav className="navbar navbar-expand-sm " >  
                         <div id="top-filler"></div>
                         <a className="navbar-brand" href="/">
                         <img src ={logo} className ="AppLogo" alt ="logo"/>

@@ -1,6 +1,6 @@
 .genres {
     text-align: center;
-        /* background: #369; */
+    background: #689f38;
 }
 
 .genres ul {
@@ -14,9 +14,9 @@
     padding: 20px 50px
 }
 
-.genres li a {
+/* .genres li a {
     color: white;
-}
+} */
 
 .createNew {
     margin-top: 20px;
@@ -29,8 +29,8 @@
 	text-align: left;
 }
 .card-header {
-    background: ghostwhite;
-	color: 000;
+    background: #D1C4E9;
+	color: white;
     font-weight: 600;
     padding: -10%;
 }

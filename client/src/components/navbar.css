@@ -1,10 +1,14 @@
-/* .navbar {
+ .navbar {
     height: 50px;
-    background-color: ghostwhite;
-} */
+    background:#33691e;
+    color: FFFFFF;
+   
+    }
+
+
 
 /* h1 {
-    color: rgb(17, 8, 139);
+    color: FFFFFF;
     text-align: left;
     font-family: Georgia, 'Times New Roman', Times, serif;
 } */
@@ -20,8 +24,10 @@
       width:175px;
   } 
   #sugeeta{
-      color: white;
+    color: white;
+    
       
   }
-  
-  
+  /* a:hover {
+    background-color:  #D1C4E9;
+  } */

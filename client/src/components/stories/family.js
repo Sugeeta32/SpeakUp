@@ -1,26 +1,25 @@
 import React, { Fragment, Component } from 'react';
-import axios from 'axios'
-import Results from './Result'
+import axios from 'axios';
+import Results from '../Result'
 import { Link } from 'react-router-dom'
-import './forum.css'
+// import "../../components/style.css"
 
 
-class Forum extends Component {
+class Family extends Component {
 
     state = {
         articles: []
     }
 
     componentDidMount() {
-        this.getTopics()
+        this.getFamily()
     }
 
-    getTopics = () => {
-        axios.get("/all").then(res => {
-            // console.log(res.data)
+    getFamily = () => {
+        axios.get("/family").then(res => {
             this.setState({ articles: res.data })
-            console.log(this.state.articles)
         })
+        console.log(this.state.articles)
     }
 
     render() {
@@ -38,22 +37,21 @@ class Forum extends Component {
                         <li><Link to="/forum/finance">Financial</Link></li>
                     </ul>
                 </div>
-                <div className="jumbotron jumbotron-fluid" id="alltron">
+                <div className="jumbotron jumbotron-fluid" id="funnytron">
                     <div className="container">
-                        <h1 className="display-4 text-center">All Stories</h1>
-                        <p className="lead text-center">These are all the stories...</p>
+                        <h1 className="display-4 text-center">Family Stories</h1>
+                        <p className="lead text-center">...</p>
                     </div>
                 </div>
                 <div className="container">
                     <div className="row">
                         <div className="createNew float-right">
-                        {loggedIn ? (
-                            <Link to="/newstory" className="btn btn-warning" role="button">Create New Story</Link>
-                        ) : (
-                            <Link to="/login" className="btn btn-warning " role="button">Create New Story</Link>
-                        )}
-                            </div>
-                        
+                            {loggedIn ? (
+                                <Link to="/newstory" className="btn btn-warning float-right" role="button">Create New Story</Link>
+                            ) : (
+                                    <Link to="/login" className="btn btn-warning float-right" role="button">Create New Story</Link>
+                                )}
+                        </div>
                         <div className="posts col-md-12">
                             <ul>
                                 {this.state.articles.map(article => (
@@ -76,4 +74,4 @@ class Forum extends Component {
     }
 }
 
-export default Forum;
+export default Family;

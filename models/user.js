@@ -11,7 +11,7 @@ const userSchema = new Schema({
 
 })
 
-// Define schema methods
+// Define schema methods to hash passwords
 userSchema.methods = {
 	checkPassword: function (inputPassword) {
 		console.log('sugeeta chkpassworduser.js------->')

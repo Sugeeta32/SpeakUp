@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { Route, Switch } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import './App.css'
 
 import Forum from './components/forum'
 import Navbar from './components/navbar'
-import Login from './components/login'
-//import SignIn from './pages/SignIn'
-import NoMatch from './pages/NoMatch'
-import Home from './pages/Home'
+import LoginForm from './components/login-form'
+import Footer from './components/footer'
+import Home from './components/Home'
 import Signup from './components/signup'
-import Newstory from "./components/newstory"
-import Emotion from "./components/story/emotion"
-//import Home from './components/home'
+import NewStory from './components/newstory'
+import Family from './components/stories/family'
+import Social from './components/stories/social'
+import Health from './components/stories/health'
+import Psych from './components/stories/psychological'
+import Emotion from './components/stories/emotional'
+import Finance from './components/stories/financial'
+import Comments from './components/comments'
+//import Family from './components/stories/family';
+//import Social from './components/stories/social';
+//import Footer from './components/footer'
 
 
 
@@ -35,8 +42,8 @@ class App extends Component {
   }
   getUser() {
     axios.get('/user/').then(response => {
-      console.log('Get user response: ')
-      console.log(response.data)
+      console.log('App.js-->Get user response: ')
+      console.log('app.js getUser-->'+response.data);
       if (response.data.user) {
         console.log('Get User: There is a user saved in the server session: ')
 
@@ -59,40 +66,79 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
-        <Switch>
+        
           <Route
             exact path="/"
             component={Home} />
-          <Route
+          
+          <Route path="/login" render={() =>
+         < LoginForm updateUser={this.updateUser} /> } />
+         <Route path="/signup" render ={() => <Signup signup = {this.signup } /> }/>
+
+         <Route
             exact path="/forum"
             render={() =>
               <Forum
                 loggedIn={this.state.loggedIn}
               />}
           />
-          <Route path="/login" render={() =>
-            < Login updateUser={this.updateUser} />
-          } />
-         <Route path="/signup" render ={() => <Signup signup = {this.signup } /> }/>
 
          <Route
           path="/newstory"
           render={() =>
-            <Newstory
+            <NewStory
               username={this.state.username}
               loggedIn={this.state.loggedIn}
             />}
         />
-
-<Route
+        <Route
+          path="/forum/family"
+          render={() =>
+            <Family
+              loggedIn={this.state.loggedIn}
+            />}
+        />
+        <Route
+          path="/forum/social"
+          render={() =>
+            <Social
+              loggedIn={this.state.loggedIn}
+            />}
+        />
+        <Route
+          path="/forum/health"
+          render={() =>
+            <Health
+              loggedIn={this.state.loggedIn}
+            />}
+        />
+        <Route
+          path="/forum/psych"
+          render={() =>
+            <Psych
+              loggedIn={this.state.loggedIn}
+            />}
+        />
+        <Route
+          path="/forum/finance"
+          render={() =>
+            <Finance
+              loggedIn={this.state.loggedIn}
+            />}
+        />
+        <Route
           path="/forum/emotion"
           render={() =>
             <Emotion
               loggedIn={this.state.loggedIn}
             />}
         />
-          <Route component={NoMatch} />
-        </Switch>
+        <Route
+          exact path="/story/:id"
+          component={Comments} />
+        
+          <Footer/>
+        
       </div>
     );
   }
