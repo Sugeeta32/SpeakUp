@@ -17,6 +17,7 @@ import Psych from './components/stories/psychological'
 import Emotion from './components/stories/emotional'
 import Finance from './components/stories/financial'
 import Comments from './components/comments'
+import Quote from './components/quotes'
 //import Family from './components/stories/family';
 //import Social from './components/stories/social';
 //import Footer from './components/footer'
@@ -66,10 +67,12 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+       
         
           <Route
             exact path="/"
             component={Home} />
+           
           
           <Route path="/login" render={() =>
          < LoginForm updateUser={this.updateUser} /> } />
@@ -91,6 +94,7 @@ class App extends Component {
               loggedIn={this.state.loggedIn}
             />}
         />
+       
         <Route
           path="/forum/family"
           render={() =>
@@ -133,10 +137,11 @@ class App extends Component {
               loggedIn={this.state.loggedIn}
             />}
         />
+            <Quote/>
         <Route
           exact path="/story/:id"
           component={Comments} />
-        
+       
           <Footer/>
         
       </div>

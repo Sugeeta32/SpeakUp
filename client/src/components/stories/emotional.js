@@ -2,7 +2,7 @@ import React, { Fragment, Component } from 'react';
 import axios from 'axios';
 import Results from '../Result'
 import { Link } from 'react-router-dom'
-
+//import '../../components/style.css'
 
 class Emotion extends Component {
 
@@ -46,9 +46,9 @@ class Emotion extends Component {
                     <div className="row">
                         <div className="createNew float-right">
                             {loggedIn ? (
-                                <Link to="/newstory" className="btn btn-warning float-right" role="button">Create New Story</Link>
+                                <Link to="/newstory" className="btn  btn-success float-right" role="button">Create New Story</Link>
                             ) : (
-                                    <Link to="/login" className="btn btn-warning float-right" role="button">Create New Story</Link>
+                                    <Link to="/login" className="btn btn-success float-right" role="button">Create New Story</Link>
                                 )}
                         </div>
                         <div className="posts col-md-12">
