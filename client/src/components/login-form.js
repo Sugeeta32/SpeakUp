@@ -1,5 +1,5 @@
 import React from "react";
-//import "./style.scss"
+import "./style.scss"
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 
@@ -60,41 +60,31 @@ export class LoginForm extends React.Component {
             return <Redirect to={{ pathname: this.state.redirectTo }} />
         } else {
             return (
-               <div className="LogInContainer"> 
-                <div className="loginCss">
-                    <h4>Login</h4>
-                    <form className="form-horizontal">
-                        <div className="form-group">
-                                <label className="form-label" htmlFor="username"></label>
-                                <input className="form-input"
-                                    type="text"
-                                    id="username"
-                                    name="username"
-                                    placeholder="Username"
-                                    value={this.state.username}
-                                    onChange={this.handleChange}
-                                />
-                        </div>
-                        <div className="form-group">
-                                <label className="form-label" htmlFor="password"></label>
-                                <input className="form-input"
-                                    placeholder="Password"
-                                    type="password"
-                                    name="password"
-                                    value={this.state.password}
-                                    onChange={this.handleChange}
-                                />
-                        </div>
-                        <div className="form-group ">
-                            <button
-                                className="btn btn-primary"
-                                id="loginButton"
-                                onClick={this.handleSubmit}
-                                type="submit">Submit</button>
-                        </div>
-                    </form>
-                </div>
-               </div> 
+                <div className="base-container">
+          <div className="header">Log In</div>
+          <div className="content">
+
+            <div className="form">
+              <div className="form-group">
+                <label htmlFor="username">Username</label>
+                <input type="text" name="username" placeholder="username" value={this.state.username}
+                  onChange={this.handleChange} />
+              </div>
+             
+              <div className="form-group">
+                <label htmlFor="password">Password</label>
+                <input type="text" name="password" placeholder="password" value={this.state.password}
+                  onChange={this.handleChange} />
+              </div>
+            </div>
+          </div>
+          <div className="footer">
+            <button type="submit" onClick={this.handleSubmit} className="btn1">
+              Login
+          </button>
+          </div>
+        </div>
+            
             )
         }
     }
