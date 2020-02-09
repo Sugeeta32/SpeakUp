@@ -29,7 +29,7 @@ class Psych extends Component {
                 <div className="genres">
                     <ul>
                     <li><Link to="/forum">All</Link></li>
-                        <li><Link to="/forum/Family">Family</Link></li>
+                        <li><Link to="/forum/family">Family</Link></li>
                         <li><Link to="/forum/social">Social</Link></li>
                         <li><Link to="/forum/health">Health</Link></li>
                         <li><Link to="/forum/psych">Psychological</Link></li>

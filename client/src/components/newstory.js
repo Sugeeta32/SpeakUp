@@ -9,7 +9,7 @@ class NewStory extends Component {
         title: "",
         author: "",
         description: "",
-        genre: "",
+        genre: "family",
         redirectTo: null
     }
 
@@ -58,7 +58,7 @@ class NewStory extends Component {
                                 <option value="family">Family</option>
                                 <option value="social">Social</option>
                                 <option value="health">Health</option>
-                                <option value="psyhc">Psychological</option>
+                                <option value="psych">Psychological</option>
                                 <option value="emotion">Emotional</option>
                                 <option value="finance">Financial</option>
                             </select>
