@@ -57,39 +57,42 @@ export class Signup extends React.Component {
 
   }
 
-  
+
 
   render() {
     if (this.state.redirectTo) {
       return <Redirect to={{ pathname: this.state.redirectTo }} />
     } else {
       return (
-        <div className="base-container">
-          <div className="header">Register</div>
-          <div className="content">
+        <div class="form-row justify-content-center">
+          <div className="base-container">
+            <div className="header">Register</div>
+            <div className="content">
 
-            <div className="form">
-              <div className="form-group">
-                <label htmlFor="username">Username</label>
-                <input type="text" name="username" placeholder="username" value={this.state.username}
-                  onChange={this.handleChange} />
-              </div>
-              <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <input type="email" name="email" placeholder="email" value={this.state.email}
-                  onChange={this.handleChange} />
-              </div>
-              <div className="form-group">
-                <label htmlFor="password">Password</label>
-                <input type="text" name="password" placeholder="password" value={this.state.password}
-                  onChange={this.handleChange} />
+              <div className="form">
+                <div className="form-group">
+                  <label htmlFor="username">Username</label>
+                  <input type="text" name="username" placeholder="username" value={this.state.username}
+                    onChange={this.handleChange} />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="email">Email</label>
+                  <input type="email" name="email" placeholder="email" value={this.state.email}
+                    onChange={this.handleChange} />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="password">Password</label>
+                  <input type="password" name="password" placeholder="password" value={this.state.password}
+                    onChange={this.handleChange} />
+                </div>
+                <div className="form-group">
+                  <button type="submit" onClick={this.handleSubmit} className="btn1">
+                    Register
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="footer">
-            <button type="submit" onClick={this.handleSubmit} className="btn1">
-              Register
-          </button>
+
           </div>
         </div>
       )
