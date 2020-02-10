@@ -44,7 +44,9 @@ export class Signup extends React.Component {
         this.setState({
 
           //redirected to login page 
-          redirectTo: "/login"
+          redirectTo: "/login",
+          successFlash: 'Welcome!'
+
         })
 
       } else {

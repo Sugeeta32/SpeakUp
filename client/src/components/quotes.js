@@ -30,7 +30,7 @@ getQuote(){
         "headers":{
         "content-type":"application/octet-stream",
         "x-rapidapi-host":"joke3.p.rapidapi.com",
-        "x-rapidapi-key":"2c2dfb1252msh21ed59ba5485e27p1292dejsn10ebb02ca241"
+        "x-rapidapi-key":"process.env.API_KEY"
         }
         })
         

@@ -47,8 +47,9 @@ class Navbar extends Component {
 				                </Link>
                                 <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
                                 <span  id ="sugeeta">Logout</span></Link>
+                                
                             </section>
-                        ) : (
+                        ) : ( 
                             <section className="navbar-section">
                                 <Link to="/" className="btn btn-link text-secondary ml-5">
                                     <span  id ="sugeeta">Home</span>
