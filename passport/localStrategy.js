@@ -13,7 +13,7 @@ const strategy = new LocalStrategy(
 				return done(err)
 			}
 			if (!user) {
-				return done(null, false, { message: 'Incorrect username' })
+				return done(null, false, {failureFlash: 'Incorrect username' })
 			}
 			if (!user.checkPassword(password)) {
 				return done(null, false, { message: 'Incorrect password' })

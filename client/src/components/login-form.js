@@ -61,11 +61,9 @@ export class LoginForm extends React.Component {
     } else {
       return (
         <div class="form-row justify-content-center">
-        <div className="base-container">
-         
+          <div className="base-container">
             <div className="header">Log In</div>
             <div className="content">
-
               <div className="form">
                 <div className="form-group">
                   <label htmlFor="username">Username</label>
@@ -79,13 +77,13 @@ export class LoginForm extends React.Component {
                     onChange={this.handleChange} />
                 </div>
                 <div className="form-group">
-              <button type="submit" onClick={this.handleSubmit} className="btn1">
-                Login
-              </button>
-            </div>
+                  <button type="submit" onClick={this.handleSubmit} className="btn1">
+                    Login
+                  </button>
+                </div>
               </div>
             </div>
-            
+
           </div>
         </div>
 
