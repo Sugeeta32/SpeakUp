@@ -3,7 +3,7 @@
 
 import React, { Component } from 'react';
 import axios from 'axios';
-
+require('dotenv').config();
 class Quote extends Component {
     constructor(props) {
         super(props);
@@ -11,6 +11,7 @@ class Quote extends Component {
             quote:null,
             color:''
         }
+        this.jokeapi = process.env.REACT_APP_API_KEY;
         this.getQuote = this.getQuote.bind(this);
     }
 
@@ -21,16 +22,15 @@ class Quote extends Component {
         this.setState({color:color});
     }    
 
-   
-
 getQuote(){
+    console.log(this.jokeapi)
     axios({
         "method":"GET",
         "url":"https://joke3.p.rapidapi.com/v1/joke",
         "headers":{
         "content-type":"application/octet-stream",
         "x-rapidapi-host":"joke3.p.rapidapi.com",
-        "x-rapidapi-key":"process.env.API_KEY"
+        "x-rapidapi-key":this.jokeapi
         }
         })
         
