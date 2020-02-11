@@ -48,10 +48,10 @@ class Forum extends Component {
                     <div className="row">
                         <div className="createNew float-right">
                         {loggedIn ? (
-                            <Link to="/newstory" className="btn " role="button">Create New Story</Link>
-                        ) : (
-                            <Link to="/login" className="btn  " role="button">Create New Story</Link>
-                        )}
+                                <Link to="/newstory" className="btn  btn-success float-right" role="button">Create New Story</Link>
+                            ) : (
+                                    <Link to="/login" className="btn btn-success float-right" role="button">Create New Story</Link>
+                                )}
                             </div>
                         
                         <div className="posts col-md-12">
