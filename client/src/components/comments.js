@@ -79,7 +79,7 @@ class Comments extends Component {
         console.log('loggedIn--->' + loggedIn);
         return (
             <div>
-                <FirstPost
+                <FirstPost 
                     description={this.state.story}
                     author={this.state.author}
                 />
