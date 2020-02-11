@@ -11,7 +11,8 @@ class Quote extends Component {
             quote:null,
             color:''
         }
-        this.jokeapi = process.env.REACT_APP_API_KEY;
+        //const jokepi = process.env.REACT_APP_API_KEY;
+        //this.jokeapi = process.env.REACT_APP_API_KEY;
         this.getQuote = this.getQuote.bind(this);
     }
 
@@ -21,16 +22,17 @@ class Quote extends Component {
         var color=colors[x];
         this.setState({color:color});
     }    
-
+    
 getQuote(){
-    console.log(this.jokeapi)
+    const jokeapi = process.env.REACT_APP_API_KEY;
+    console.log(jokeapi)
     axios({
         "method":"GET",
         "url":"https://joke3.p.rapidapi.com/v1/joke",
         "headers":{
         "content-type":"application/octet-stream",
         "x-rapidapi-host":"joke3.p.rapidapi.com",
-        "x-rapidapi-key":this.jokeapi
+        "x-rapidapi-key":jokeapi
         }
         })
         
