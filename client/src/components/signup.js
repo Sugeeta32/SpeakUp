@@ -88,7 +88,7 @@ export class Signup extends React.Component {
                     onChange={this.handleChange} />
                 </div>
                 <div className="form-group">
-                  <button type="submit" onClick={this.handleSubmit} className="btn1">
+                  <button type="submit" className="btn btn-secondary active " onClick={this.handleSubmit} >
                     Register
                   </button>
                 </div>

@@ -77,7 +77,7 @@ export class LoginForm extends React.Component {
                     onChange={this.handleChange} />
                 </div>
                 <div className="form-group">
-                  <button type="submit" onClick={this.handleSubmit} className="btn1">
+                  <button className="btn btn-secondary active " type="submit" onClick={this.handleSubmit} >
                     Login
                   </button>
                 </div>

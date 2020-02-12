@@ -25,19 +25,19 @@ import './home.css'
 function Home() {
     return (
 <div className="shadow-lg">
-        <Jumbotron>
+        <Jumbotron >
             
             <Container>
-                <Row >
+                <Row style ={{fontSize:"20px"}} >
                   
-                        <Col md={6} >{`SpeakUp is a share your story site where you can share your story anonymously and unburden yourself. Feel free to ask your question or share your story .`}</Col>
+                        <Col md={6} >{`SpeakUp is a share your story site where you can share your story anonymously and unburden yourself. Feel free to ask your question or share your story. It only takes a minute to sign up.`}</Col>
                         <Col md={{ span: 4, offset: 0 }}>{`💬 Share your story, strengthen your resilience`}</Col>
                         </Row>
                         
                     <Row>
                     
                     </Row>
-                  <Row>
+                  <Row style ={{fontSize:"20px"}}>
                       <Col md={6}></Col>
                     <Col md={{ span: 4, offset: 0 }}>{`🗨️ Help Others, share your wisdom`}</Col>
                     </Row>

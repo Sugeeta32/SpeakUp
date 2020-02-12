@@ -58,12 +58,13 @@ router.post("/submit/:id", function(req,res){
         author: author,
         body: body,
         postId: postId
+
     })
 
     newComment.save((err, dbComment) => {
         if (err) return res.json(err)
         res.json(dbComment)
-        console.log(dbComment)
+        console.log( dbComment)
     })
 })
 
