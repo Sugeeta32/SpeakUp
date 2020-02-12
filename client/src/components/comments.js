@@ -52,7 +52,7 @@ class Comments extends Component {
 
     getComments = () => {
         axios.get("/api/comment/" + this.props.match.params.id).then(res => {
-            console.log(res.data)
+            console.log("team check"+res.data)
             this.setState({ comments: res.data })
         })
     }
@@ -84,7 +84,7 @@ class Comments extends Component {
                     author={this.state.author}
                 />
                 {this.state.comments.map(comment => (
-                    <FirstPost
+                    <FirstPost 
                         description={comment.body}
                         author={comment.author}
                     />
@@ -92,7 +92,7 @@ class Comments extends Component {
                 {loggedIn ? (
                     <form className="commentForm">
                         <div className="col-12 mt-5">
-                            <textarea className="form-input"
+                            <textarea className="form-input" style={{display:"block",margin:"auto"}}
                                 type="text"
                                 id="commentBox"
                                 name="description"
@@ -103,9 +103,7 @@ class Comments extends Component {
                             />
                         </div>
                         <button
-                            className="btn btn-primary col-1"
-                            id="addCommentButton"
-
+                            className="btn btn-secondary active "style={{display:"block",margin:"auto", maxWidth: "100px"}} 
                             onClick={(event) => this.handleSubmit(event)}
                             type="submit">Submit</button>
                     </form>
